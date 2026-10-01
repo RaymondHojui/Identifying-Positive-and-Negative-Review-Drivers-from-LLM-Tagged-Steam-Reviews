@@ -110,7 +110,7 @@ It should look something like this:
 
 **Issues About LLM lables & How to Fix It**
 
-There are 2 major issues with the leabels at this stage:
+There are 2 major issues with the lables at this stage:
 
 **Problem 1:**
 Different labels are being generated for the same concept (e.g., “user interface” and “UI”). This occurs because the LLM reviews are stateless and don’t remember previous tag decisions. However, there is a recognizable pattern for the tags. Tags are generally 1-2 word long, and similar words will keep repeating. A simple fix is to normalize synonyms to a single canonical tag.
