@@ -40,7 +40,7 @@ This project simulates a real-world data analysis workflow in the gaming industr
   Purpose: Purpose: This is the final dataset used for tag-level recommendation-rate analysis. It contains both the cleaned reviews and AI-generated sentiment/theme labels (via a large language model, LLM).
 
 ---
-## 🕷️Steam Review Scraper & Cleaning Pipeline
+## Steam Review Scraper & Cleaning Pipeline
 
 First, we scrape top-rated Steam user reviews using BeautifulSoup and save the raw data as `raw_reviews.csv`. Then, we clean the review text using a regular expression to remove date prefixes and save the result as `reviews_cleaned.csv`.
 
@@ -79,7 +79,7 @@ The following is an example illustrating the structure and format of the `review
 Now we have cleaned sorted data that is ready to be tagged by an llm!
 
 ---
-## 🤖 Auto tagging with Local LLM
+## Auto tagging with Local LLM
 Next, we will run a local LLM over the `review` field (column) for each record (row) and assign 1–5 specific labels summarizing the content. Labels are stored as a list in a new CSV field named`llm_lable`
 
 **Preparation and Getting Ready**
@@ -128,7 +128,7 @@ Although most labels generated are accurate, there may still be instances of ina
 To invsetigate in the accuracy of LLM label, we can use simple random sampling to estimate a population proportion of correctness of LLM tagging. The way we do this is to randomly select 15% of the labled comments and mannually check if they are lablled correctly or incorrectly. Hence, we may use the following code to pick 15 random comments (since our sample size is 100) and check the correctness of AI lableing.
 
 ---
-# 📊 Data Visualization
+# Data Visualization
 Now that we have the cleaned all the data, we have enough information to take a look at how often each tag appears in negative reviews. We can present this with a simple bar chart that display the frequency of each tag in `Not Recommed`.
 
 > **Implementation**
@@ -137,7 +137,7 @@ Now that we have the cleaned all the data, we have enough information to take a 
 > Counts recurring themes in negative reviews and visualizes their frequencies.
 
 ---
-# 🔎 Identifying Positive and Negative Review Drivers
+# Identifying Positive and Negative Review Drivers
 To identify factors influencing whether reviews are recommended, we compare the `Recommended` and `Not Recommended` rates among reviews containing each LLM-generated tag.
 
 For every tag, the analysis counts the number of positive and negative recommendations, calculates the corresponding rates, and ranks the tags
@@ -186,7 +186,7 @@ Example: `X_difficulty ~ Binomial(n = 11, p = 0.727)`
 This means that among reviews tagged with `difficulty`, 8 out of 11 were `Recommended`.
 
 ---
-## ⚖️ License and Attribution
+## License and Attribution
 
 Copyright © 2026 Raymond Ho-Jui.
 
